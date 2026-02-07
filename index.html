@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Week for MY FOREVER LOVE, MY KALLU, MY PRIYE 💖</title>
+
+  <style>
+    :root {
+      --bg: #fff5f8;
+      --card: #ffffff;
+      --pink: #ff9ecf;
+      --text: #5a2a40;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    /* HOME */
+    #home {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .home-btn {
+      background: var(--pink);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      color: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .section {
+      display: none;
+      background: var(--card);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .photos {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .photos img {
+      width: 48%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .love-note, .memory {
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 12px 0;
+    }
+
+    .surprise-btn {
+      display: block;
+      margin: 15px auto 0;
+      background: var(--pink);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 12px auto 0;
+      background: none;
+      border: none;
+      color: var(--pink);
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 80%;
+      text-align: center;
+      animation: pop 0.3s ease;
+    }
+
+    .popup-content img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Valentine Week for Neha 💕</h1>
+  <p>One day at a time… just like how I fell for you 🧸</p>
+</header>
+
+<!-- HOME -->
+<div id="home">
+  <button class="home-btn" onclick="openSection('rose')">🌹 Rose Day</button>
+  <button class="home-btn" onclick="openSection('propose')">💍 Propose Day</button>
+  <button class="home-btn" onclick="openSection('chocolate')">🍫 Chocolate Day</button>
+  <button class="home-btn" onclick="openSection('teddy')">🧸 Teddy Day</button>
+  <button class="home-btn" onclick="openSection('promise')">🤞 Promise Day</button>
+  <button class="home-btn" onclick="openSection('hug')">🤗 Hug Day</button>
+  <button class="home-btn" onclick="openSection('kiss')">😘 Kiss Day</button>
+  <button class="home-btn" onclick="openSection('valentine')">❤️ Valentine</button>
+</div>
+
+<!-- ROSE -->
+<div class="section" id="rose" data-music="assets/music/rose.mp3">
+  <h2>🌹 Rose Day</h2>
+  <div class="love-note">Neha, I love youso much babyyy, your are 1000 times more beautiful than roses 🌸</div>
+  <div class="photos">
+    <img src="assets/images/rose1.jpg" />
+    <img src="assets/images/rose2.jpg" />
+  </div>
+  <div class="memory">Iss week aapke liye kuch khaas kara hai I hope you like my love🥹</div>
+  <button class="surprise-btn" onclick="openPopup('assets/images/rose-surprise.jpg')">Tap for surprise 💖</button>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- PROPOSE -->
+<div class="section" id="propose" data-music="assets/music/propose.mp3">
+  <h2>💍 Propose Day</h2>
+  <div class="love-note">Waise to mere liye harr din propose day hai but this one is for you🩷🥹</div>
+  <div class="photos">
+    <img src="assets/images/propose1.jpg" />
+    <img src="assets/images/propose2.jpg" />
+  </div>
+  <div class="memory">The day I proposed you on your birthday was such a special moment for me...</div>
+  <button class="surprise-btn" onclick="openPopup('assets/images/propose-surprise.jpg')">Tap for surprise 💖</button>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- CHOCOLATE -->
+<div class="section" id="chocolate" data-music="assets/music/chocolate.mp3">
+  <h2>🍫 Chocolate Day</h2>
+  <div class="love-note">Neha, chocolates are sweet, but somehow you still manage to be sweeter.</div>
+  <div class="photos">
+    <img src="assets/images/chocolate1.jpg" />
+    <img src="assets/images/chocolate2.jpg" />
+  </div>
+  <div class="memory">Chijjiess khilaunga apko boht saari thoda wait krlo 🥰</div>
+  <button class="surprise-btn" onclick="openPopup('assets/images/chocolate-surprise.jpg')">Tap for surprise 💖</button>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- TEDDY -->
+<div class="section" id="teddy" data-music="assets/music/teddy.mp3">
+  <h2>🧸 Teddy Day</h2>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- PROMISE -->
+<div class="section" id="promise" data-music="assets/music/promise.mp3">
+  <h2>🤞 Promise Day</h2>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- HUG -->
+<div class="section" id="hug" data-music="assets/music/hug.mp3">
+  <h2>🤗 Hug Day</h2>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- KISS -->
+<div class="section" id="kiss" data-music="assets/music/kiss.mp3">
+  <h2>😘 Kiss Day</h2>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- VALENTINE -->
+<div class="section" id="valentine" data-music="assets/music/valentine.mp3">
+  <h2>❤️ Valentine’s Day</h2>
+  <p class="love-note">Neha, this isn’t a website anymore. This is my heart, only for you.</p>
+  <p class="memory">NEHA, WILL YOU BE MY VALENTINE FOREVER? 🥹🧿</p>
+  <button class="back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup" onclick="closePopup()">
+  <div class="popup-content">
+    <img id="popup-img" src="" />
+    <p>Certified Neha Moment 🧸💕</p>
+  </div>
+</div>
+
+<script>
+let currentAudio = null;
+
+function openSection(id) {
+  document.getElementById('home').style.display = 'none';
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById(id);
+  section.classList.add('active');
+
+  const music = section.getAttribute('data-music');
+  if (music) {
+    if (currentAudio) currentAudio.pause();
+    currentAudio = new Audio(music);
+    currentAudio.loop = true;
+    currentAudio.volume = 0.5;
+    currentAudio.play();
+  }
+}
+
+function goHome() {
+  document.getElementById('home').style.display = 'flex';
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  if (currentAudio) currentAudio.pause();
+}
+
+function openPopup(src) {
+  document.getElementById('popup-img').src = src;
+  document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+setInterval(() => {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerText = '💖';
+  heart.style.left = Math.random() * 100 + 'vw';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 700);
+</script>
+
+</body>
+</html>
